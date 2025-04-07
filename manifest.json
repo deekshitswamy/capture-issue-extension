@@ -1,0 +1,26 @@
+{
+    "manifest_version": 3,
+    "name": "Screen Recorder with Jira Integration",
+    "version": "1.0",
+    "permissions": [
+      "activeTab",
+      "desktopCapture",
+      "storage",
+      "scripting",
+      "downloads",
+      "https://<your-jira-domain>/*"
+    ],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": "icon.png"
+    },
+    "background": {
+      "service_worker": "js/background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["js/content.js"]
+      }
+    ]
+  }
